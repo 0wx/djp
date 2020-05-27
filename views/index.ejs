@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title%></title>
+    <!--
+        <link rel="stylesheet" type="text/css" href="style/style.css"">
+    -->
+    <style>
+      html * {
+        font-size: 9px;
+        font-family: Arial;
+      }
+
+      table.info-tb td {
+        vertical-align: top;
+        border-collapse: collapse;
+        text-align: left;
+        border: 0px;
+        padding: 3px 3px 3px 3px;
+      }
+
+      .info-box {
+        padding-top: 0px;
+        padding-bottom: 10px;
+      }
+      .medsos {
+        padding-bottom: 5px;
+      }
+      .tunggakan {
+        padding-bottom: 15px;
+      }
+
+      .judul {
+        padding-top: 10px;
+        padding-bottom: 7px;
+        text-align: center;
+      }
+      table.tunggakan-tb {
+        border-collapse: collapse;
+        border: 1px solid black;
+        table-layout: auto;
+        width: 100%;
+      }
+      table.tunggakan-tb th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      table.medsos-tb {
+        border-collapse: collapse;
+        border: 1px solid black;
+        table-layout: auto;
+        width: 100%;
+      }
+
+      table.medsos-tb th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 3px 3px 3px 3px;
+      }
+      table.saham-tb {
+        border-collapse: collapse;
+        border: 1px solid black;
+        table-layout: auto;
+        width: 100%;
+      }
+
+      table.saham-tb th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 3px 3px 3px 3px;
+      }
+
+      table.keluarga-tb {
+        border-collapse: collapse;
+        border: 1px solid black;
+        table-layout: auto;
+        width: 100%;
+      }
+
+      table.keluarga-tb th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 1px 1px 1px 1px;
+      }
+
+      img.lampiran-img {
+        padding-left: 2%;
+      }
+
+      ul {
+        margin-left: -3px;
+      }
+      ul.catatan-ls {
+        list-style-type: circle;
+      }
+      li.catatan {
+        margin: 0 0 5px 0;
+      }
+      .judul-lp {
+        padding-top: 15px;
+        padding-bottom: 5px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info-box">
+      <table class="info-tb">
+        <tr>
+          <td>Nama WP</td>
+          <td>:</td>
+          <td><%= nama %></td>
+        </tr>
+        <tr>
+          <td>NPWP</td>
+          <td>:</td>
+          <td><%= NPWP %></td>
+        </tr>
+        <tr>
+          <td>Alamat</td>
+          <td>:</td>
+          <td><%= Alamat %></td>
+        </tr>
+        <tr>
+          <td>Penanggung Jawab</td>
+          <td>:</td>
+          <td><%= Pjwb %></td>
+        </tr>
+        <tr>
+          <td>KLU</td>
+          <td>:</td>
+          <td><%= KLU %></td>
+        </tr>
+      </table>
+    </div>
+    <% if(+space.info > 0){ for(let i = 0; i < space.info; i++) {%>
+    <br />
+    <%}}%>
+    <b> 
+    <div class="judul">Daftar Tunggakan</div></b>
+    <div class="tunggakan">
+      <table class="tunggakan-tb">
+        <tr>
+          <th>No.</th>
+          <th>No. Produk Hukum</th>
+          <th>Tipe</th>
+          <th>JSPN</th>
+          <th>Nilai SKP/STP</th>
+        </tr>
+        <% if (tunggakan.length > 0) { %> <% let i = 0; %> 
+        <% tunggakan.forEach(x => { i++%>
+        <tr>
+          <td><%= i%></td>
+          <td><%= x.nph %></td>
+          <td><%= x.tipe %></td>
+          <td><%= x.JSPN %></td>
+          <td><%=x.Nilai %></td>
+        </tr>
+        <% });%> <% };%>
+      </table>
+    </div>
+    <% if(+space.tunggakan > 0){ for(let i = 0; i < space.tunggakan; i++) {%>
+        <br />
+        <%}}%>
+    <div class="medsos">
+      <table class="medsos-tb">
+        <tr>
+          <th>Nama</th>
+          <th>Telepon</th>
+          <th>Email</th>
+          <th>Medsos</th>
+        </tr>
+        <% if(Detail.length > 0) {%> <% Detail.forEach(x => { %>
+        <tr>
+          <td><%= x.nama %></td>
+          <td><%= x.telepon %></td>
+          <td><%= x.email %></td>
+          <td><%= x.medsos %></td>
+        </tr>
+        <%})%> <% }else{%>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <% }%>
+      </table>
+    </div>
+    <% if(+space.medsos > 0){ for(let i = 0; i < space.medsos; i++) {%>
+        <br />
+        <%}}%>
+    <b>
+      <div class="judul">
+        KONTAK
+      </div>
+    </b>
+    <div class="saham">
+      <table class="saham-tb">
+        <tr>
+          <th>No.</th>
+          <th>NPWP</th>
+          <th>Nama</th>
+          <th>%</th>
+          <th>Nilai</th>
+          <th>Keterangan</th>
+        </tr>
+        <% if(KontakSaham.length > 0) { %> <% let i = 0; %> 
+        <% KontakSaham.forEach(x => { i++ %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= x.npwp %></td>
+          <td><%= x.nama %></td>
+          <td><%= x.persen %></td>
+          <td><%= x.nilai %></td>
+          <td><%= x.ket %></td>
+        </tr>
+        <% }); %> <% }else{%>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <% }%>
+      </table>
+    </div>
+    <% if(+space.saham > 0){ for(let i = 0; i < space.saham; i++) {%>
+        <br />
+        <%}}%>
+    <b><div class="judul">Daftar Anggota Keluarga</div></b>
+    <div class="keluarga">
+      <table class="keluarga-tb">
+        <tr>
+          <th>No.</th>
+          <th>NIK</th>
+          <th>Nama</th>
+          <th>Tempat Lahir</th>
+          <th>Tanggal Lahir</th>
+          <th>Jenis Kelamin</th>
+          <th>Status Kawin</th>
+          <th>Hub. Keluarga</th>
+          <th>Pekerjaan</th>
+        </tr>
+        <% if (keluarga.length > 0) { %> <% let i = 0; %> 
+        <% keluarga.forEach(x => { i++ %>
+        <tr>
+          <td><%= i %></td>
+          <td><%= x.nik %></td>
+          <td><%= x.nama %></td>
+          <td><%= x.tl %></td>
+          <td><%= x.tgl %></td>
+          <td><%= x.jk %></td>
+          <td><%= x.status %></td>
+          <td><%= x.kel %></td>
+          <td><%= x.pekerjaan %></td>
+        </tr>
+        <% }); %> <% } else { %>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <% }; %>
+      </table>
+    </div>
+    <% if(+space.keluarga > 0){ for(let i = 0; i < space.keluarga; i++) {%>
+        <br />
+        <%}}%>
+    <div class="lampiran">
+      <b><div class="judul-lp">LAMPIRAN</div></b>
+      <% if (bufflampiran.length > 0) { %> <% bufflampiran.forEach(x => { %>
+      <img
+        src="data:image/jpeg;base64, <%= x %>"
+        width="22%"
+        class="lampiran-img"
+      />
+      <% }); %> <% }; %>
+    </div>
+    <% if(+space.lampiran > 0){ for(let i = 0; i < space.lampiran; i++) {%>
+        <br />
+        <%}}%>
+    <div class="catatan">
+      <b><div class="judul">CATATAN</div></b>
+      <ul class="catatan-ls">
+        <% if (catatan.length > 0) { %> <% catatan.forEach(x => { %>
+        <li class="catatan"><%= x %></li>
+        <% }); %> <% }; %>
+      </ul>
+    </div>
+  </body>
+</html>

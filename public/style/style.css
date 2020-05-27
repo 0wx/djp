@@ -1,0 +1,109 @@
+html,
+body {
+  background: rgb(230, 229, 229);
+  text-align: center;
+  height: 100%;
+  margin: 0;
+
+  color: rgb(31, 31, 31);
+}
+::selection {
+  background: #19f6e8;
+}
+.svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 500px;
+}
+.shape1,
+.shape2 {
+  stroke-dasharray: 1120;
+  stroke-width: 5px;
+  fill: transparent;
+  stroke: #19f6e8;
+  border-bottom: 5px solid black;
+  transition-timing-function: linear;
+  transition: stroke-dashoffset 4s, stroke-dasharray 4s;
+}
+.shape1 {
+  stroke-dashoffset: 1120;
+}
+.shape2 {
+  stroke-dashoffset: -1120;
+}
+.text {
+  font-family: "Roboto Condensed";
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+}
+.svg-wrapper:hover .shape1,
+.svg-wrapper:hover .shape2 {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1120;
+}
+.upload {
+  width: 100%;
+  height: auto;
+  padding: 10% 10% 10% 10%;
+}
+.bar {
+  font-size: large;
+}
+button {
+  align-items: center;
+  padding: 25px 25px 25px 25px;
+}
+input {
+  background-color: blanchedalmond;
+}
+table.info-tb,
+th {
+  text-align: left;
+}
+table.info-tb,
+td th {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.bar {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+table.input-tb {
+  width: 100%;
+}
+
+table.input-tb,
+td {
+  padding: 8px 13px 13px 13px;
+}
+
+.butt {
+  text-align: left;
+  padding: 13px 20px 20px 26px;
+}
+
+table.kel-tb {
+  width: 100%;
+}
+
+table.kel-tb,
+td {
+  padding: 13px 10px 10px 10px;
+}
+.catatan {
+  padding: 13px 10px 10px 10px;
+}
+
+.box {
+  border: 1px solid gray;
+}
