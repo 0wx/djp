@@ -3,8 +3,8 @@ Custom Project to automated creating PDF from input data
 based on request
 
 # Instalation
-- Download [https://nodejs.org](Node.JS) and Install to your computer
-- Clone this repository using [https://git-scm.com](Git)
+- Download [Node.JS](https://nodejs.org) and Install to your computer
+- Clone this repository using [Git](https://git-scm.com)
 ```
 $ git clone https://github.com/0wx/djp.git
 $ cd djp
