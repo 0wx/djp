@@ -36,53 +36,61 @@
       }
       table.tunggakan-tb {
         border-collapse: collapse;
-        border: 1px solid black;
+        border: 1px solid rgb(120, 120, 120);
         table-layout: auto;
         width: 100%;
       }
-      table.tunggakan-tb th,
-      td {
-        border: 1px solid black;
+      table.tunggakan-tb td {
+        border: 1px solid rgb(120, 120, 120);
         text-align: center;
       }
-
+      
       table.medsos-tb {
         border-collapse: collapse;
-        border: 1px solid black;
+        border: 1px solid rgb(120, 120, 120);
         table-layout: auto;
         width: 100%;
       }
+      th.box {
+        border: 1px solid rgb(120, 120, 120);
+        text-align: center;
+        color: white;
+        background-color: rgb(53, 53, 53);
+        padding: 3px 3px 3px 3px;
+      }
 
-      table.medsos-tb th,
+      tr.box:nth-child(odd) td {
+        background:#EBEBEB;
+      }
+      table.medsos-tb 
       td {
-        border: 1px solid black;
+        border: 1px solid rgb(120, 120, 120);
         text-align: center;
         padding: 3px 3px 3px 3px;
       }
       table.saham-tb {
         border-collapse: collapse;
-        border: 1px solid black;
+        border: 1px solid rgb(120, 120, 120);
         table-layout: auto;
         width: 100%;
       }
 
-      table.saham-tb th,
-      td {
-        border: 1px solid black;
+      table.saham-tb td {
+        border: 1px solid rgb(120, 120, 120);
         text-align: center;
         padding: 3px 3px 3px 3px;
       }
 
       table.keluarga-tb {
         border-collapse: collapse;
-        border: 1px solid black;
+        border: 1px solid rgb(120, 120, 120);
         table-layout: auto;
         width: 100%;
       }
 
-      table.keluarga-tb th,
+      table.keluarga-tb 
       td {
-        border: 1px solid black;
+        border: 1px solid rgb(120, 120, 120);
         text-align: center;
         padding: 1px 1px 1px 1px;
       }
@@ -144,16 +152,16 @@
     <div class="judul">DAFTAR TUNGGAKAN</div></b>
     <div class="tunggakan">
       <table class="tunggakan-tb">
-        <tr>
-          <th>No.</th>
-          <th>No. Produk Hukum</th>
-          <th>Tipe</th>
-          <th>JSPN</th>
-          <th>Nilai SKP/STP</th>
+        <tr class="box">
+          <th class="box">No.</th>
+          <th class="box">No. Produk Hukum</th>
+          <th class="box">Tipe</th>
+          <th class="box">JSPN</th>
+          <th class="box">Nilai SKP/STP</th>
         </tr>
         <% if (tunggakan.length > 0) { %> <% let i = 0; %> 
         <% tunggakan.forEach(x => { i++%>
-        <tr>
+        <tr class="box">
           <td><%= i%></td>
           <td><%= x.nph %></td>
           <td><%= x.tipe %></td>
@@ -173,21 +181,21 @@
         </b>
     <div class="medsos">
       <table class="medsos-tb">
-        <tr>
-          <th>Nama</th>
-          <th>Telepon</th>
-          <th>Email</th>
-          <th>Medsos</th>
+        <tr class="box">
+          <th class="box">Nama</th>
+          <th class="box">Telepon</th>
+          <th class="box">Email</th>
+          <th class="box">Medsos</th>
         </tr>
         <% if(Detail.length > 0) {%> <% Detail.forEach(x => { %>
-        <tr>
+        <tr class="box">
           <td><%= x.nama %></td>
           <td><%= x.telepon %></td>
           <td><%= x.email %></td>
           <td><%= x.medsos %></td>
         </tr>
         <%})%> <% }else{%>
-        <tr>
+        <tr class="box">
           <td>-</td>
           <td>-</td>
           <td>-</td>
@@ -206,17 +214,17 @@
     </b>
     <div class="saham">
       <table class="saham-tb">
-        <tr>
-          <th>No.</th>
-          <th>NPWP</th>
-          <th>Nama</th>
-          <th>%</th>
-          <th>Nilai</th>
-          <th>Keterangan</th>
+        <tr class="box">
+          <th class="box">No.</th>
+          <th class="box">NPWP</th>
+          <th class="box">Nama</th>
+          <th class="box">%</th>
+          <th class="box">Nilai</th>
+          <th class="box">Keterangan</th>
         </tr>
         <% if(KontakSaham.length > 0) { %> <% let i = 0; %> 
         <% KontakSaham.forEach(x => { i++ %>
-        <tr>
+        <tr class="box">
           <td><%= i %></td>
           <td><%= x.npwp %></td>
           <td><%= x.nama %></td>
@@ -225,7 +233,7 @@
           <td><%= x.ket %></td>
         </tr>
         <% }); %> <% }else{%>
-        <tr>
+        <tr class="box">
           <td>-</td>
           <td>-</td>
           <td>-</td>
@@ -242,20 +250,20 @@
     <b><div class="judul">DAFTAR ANGGOTA KELUARGA</div></b>
     <div class="keluarga">
       <table class="keluarga-tb">
-        <tr>
-          <th>No.</th>
-          <th>NIK</th>
-          <th>Nama</th>
-          <th>Tempat Lahir</th>
-          <th>Tanggal Lahir</th>
-          <th>Jenis Kelamin</th>
-          <th>Status Kawin</th>
-          <th>Hub. Keluarga</th>
-          <th>Pekerjaan</th>
+        <tr class="box">
+          <th class="box">No.</th>
+          <th class="box">NIK</th>
+          <th class="box">Nama</th>
+          <th class="box">Tempat Lahir</th>
+          <th class="box">Tanggal Lahir</th>
+          <th class="box">Jenis Kelamin</th>
+          <th class="box">Status Kawin</th>
+          <th class="box">Hub. Keluarga</th>
+          <th class="box">Pekerjaan</th>
         </tr>
         <% if (keluarga.length > 0) { %> <% let i = 0; %> 
         <% keluarga.forEach(x => { i++ %>
-        <tr>
+        <tr class="box">
           <td><%= i %></td>
           <td><%= x.nik %></td>
           <td><%= x.nama %></td>
@@ -267,7 +275,7 @@
           <td><%= x.pekerjaan %></td>
         </tr>
         <% }); %> <% } else { %>
-        <tr>
+        <tr class="box"
           <td>-</td>
           <td>-</td>
           <td>-</td>
@@ -285,8 +293,10 @@
         <br />
         <%}}%>
     <div class="lampiran">
-      <b><div class="judul-lp">LAMPIRAN</div></b>
-      <% if (bufflampiran.length > 0) { %> <% bufflampiran.forEach(x => { %>
+      
+      <% if (bufflampiran.length > 0) { %> 
+        <b><div class="judul-lp">LAMPIRAN</div></b>
+        <% bufflampiran.forEach(x => { %>
       <img
         src="data:image/jpeg;base64, <%= x %>"
         width="22%"
